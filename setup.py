@@ -7,7 +7,7 @@ class custom_install_command(install):
         install.run(self)
         target_dir = os.path.join(self.install_lib, "ten_vad_library")
         os.makedirs(target_dir, exist_ok=True)
-        shutil.copyfile("lib/macOS/ten_vad.framework", target_dir)
+        shutil.copytree("lib/macOS/ten_vad.framework", target_dir)
         print(f"Files installed to: {target_dir}")
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
